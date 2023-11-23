@@ -24,6 +24,7 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
    - b. Linux
    - c. BSD
    - d. DOS
+  
 
 #### Question 3: File System
 3. Which file system is used in XV6?
@@ -32,12 +33,14 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
    - c. ext4
    - d. simple
 
+
 #### Question 4: System Calls
 4. How are system calls implemented in XV6?
    - a. As functions in the C standard library
    - b. As interrupts
    - c. Through the command line
    - d. As external programs
+  
 
 #### Question 5: Processes
 5. In XV6, what is the maximum number of processes that can run simultaneously?
@@ -117,3 +120,119 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
 
 ## Answers
 Please write your answers here
+
+  - answer1.   b A Unix-like operating system
+  - answer2.   c BSD
+  - answer3.   d simple
+  - answer4.   b As interrupts
+  - answer5.   a.128
+  - answer6.  c sh
+  - answer7.  a.Round-robin scheduling
+  - answer8.  a.Paging
+  - answer9   d.Both b and c
+  - answer10. b.NO
+  - answer11. c.MIT
+
+  ---------------      answer 12
+
+In XV6, a process can be in the following states:
+Unused: Not in use or terminated.
+Embryonic : Being initialized.
+Sleeping: Waiting for an event.
+Runnable : Ready to run but waiting for CPU time.
+Running : Actively executing on the CPU.
+Zombie: Terminated but still has exit status information until retrieved by the parent process.
+
+
+----- --------- answer 13
+
+The XV6 file system  structure:-
+Superblock: Metadata about the file system.
+Inode: Metadata for each file or directory.
+Data blocks: Store actual file content.
+Directory structure: Maps names to inode numbers.
+File allocation table: Manages block allocation status.
+
+
+----------------- answer 14
+
+
+System Calls:
+Examples: fork(), exec(), open().
+Library Functions:
+Examples: printf(), malloc(), strcmp().
+
+System calls interact directly with the kernel, while library functions
+provide abstractions built on top of system calls for easier programming.
+
+
+----------------------answer 15
+
+
+Memory Paging:
+Splits memory into fixed-size pages.
+Uses a page table for mapping virtual to physical pages.
+
+Benefits:
+Efficient use of memory.
+Simplifies management and process creation.
+
+
+-------------------- answer 16
+
+ls:
+Lists directory contents.
+cd:
+Changes the current directory.
+cp:
+Copies files or directories.
+
+
+
+-----------------------answer 17
+
+Process Synchronization in XV6:
+Concept:
+Crucial for shared resource management and consistency.
+
+Mechanisms:
+Locks:
+Controls resource access by using  acquire() and release().
+Semaphores:
+Coordinates processes with signaling. By using  sleep() and wakeup().
+
+Conditional Variables:
+Enables processes to wait for conditions.
+
+Benefits:
+Prevents race conditions.
+Coordinates process execution and ensures orderly resource access.
+
+
+----------------------------answer 18
+
+
+Interrupts in XV6 enable immediate, asynchronous responses to external events, improving system efficiency. 
+The Interrupt Vector Table (IVT) and Interrupt Service Routines (ISRs) handle specific interrupts, 
+allowing for real-time responsiveness and multitasking.
+
+
+
+
+-------------------------answer 19
+
+XV6 implements virtual memory through paging, allowing each process its own virtual address space. 
+Advantages include expanded address space for larger applications, process isolation ensuring security,
+simplified process creation, demand paging for optimized memory usage, and flexible memory management 
+through dynamic allocation and protection mechanisms.
+
+
+
+-----------------------answer 20
+
+The XV6 boot process begins with the computer's power-on, followed by the loading of the GRUB bootloader,
+which subsequently loads the XV6 kernel from the disk into memory. The kernel initializes data structures,
+sets up the interrupt descriptor table, and establishes the initial user environment. Control is then 
+transferred to the init process, initiating user-level programs and enabling interaction through
+system calls, with the kernel managing interrupts for system responsiveness.
+
